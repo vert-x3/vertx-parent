@@ -1,4 +1,4 @@
-== Base parent pom for Vert.x projects
+## Base parent pom for Vert.x projects
 
 The parent pom defines common default configuration for Vert.x projects:
 
