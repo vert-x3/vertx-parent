@@ -204,14 +204,17 @@
             <artifactId>maven-enforcer-plugin</artifactId>
             <executions>
               <execution>
-                <id>enforce-no-snapshots</id>
+                <id>enforce-no-vertx-snapshots</id>
                 <goals>
                   <goal>enforce</goal>
                 </goals>
                 <configuration>
                   <rules>
                     <requireReleaseDeps>
-                      <message>No Snapshots Allowed during a release!</message>
+                      <message>No Vert.x Snapshots Allowed during a release!</message>
+                      <includes>
+                        <include>io.vertx:*</include>
+                      </includes>
                     </requireReleaseDeps>
                   </rules>
                   <fail>true</fail>
