@@ -108,9 +108,9 @@
                   <index>true</index>
                   <!-- Add the Maven coordinates in the manifest -->
                   <manifestEntries>
-                    <Maven-Group-Id>${groupId}</Maven-Group-Id>
-                    <Maven-Artifact-Id>${artifactId}</Maven-Artifact-Id>
-                    <Maven-Version>${version}</Maven-Version>
+                    <Maven-Group-Id>${project.groupId}</Maven-Group-Id>
+                    <Maven-Artifact-Id>${project.artifactId}</Maven-Artifact-Id>
+                    <Maven-Version>${project.version}</Maven-Version>
                   </manifestEntries>
                 </archive>
                 <!-- Remove examples and docoverride -->
