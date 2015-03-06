@@ -102,8 +102,18 @@
           <executions>
             <execution>
               <id>default-jar</id>
-              <!-- Remove examples and docoverride -->
               <configuration>
+                <archive>
+                  <!-- Generate a jar INDEX.LIST -->
+                  <index>true</index>
+                  <!-- Add the Maven coordinates in the manifest -->
+                  <manifestEntries>
+                    <Maven-Group-Id>${groupId}</Maven-Group-Id>
+                    <Maven-Artifact-Id>${artifactId}</Maven-Artifact-Id>
+                    <Maven-Version>${version}</Maven-Version>
+                  </manifestEntries>
+                </archive>
+                <!-- Remove examples and docoverride -->
                 <excludes>
                   <exclude>/docoverride/**</exclude>
                   <exclude>/examples/**</exclude>
