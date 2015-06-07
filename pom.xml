@@ -62,21 +62,19 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <!-- Plugin versions -->
-
-    <!-- We use 3.1 until this is resolved https://jira.codehaus.org/browse/MCOMPILER-236 -->
-    <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
-    <maven.jar.plugin.version>2.5</maven.jar.plugin.version>
+    <maven.compiler.plugin.version>3.3</maven.compiler.plugin.version>
+    <maven.jar.plugin.version>2.6</maven.jar.plugin.version>
     <maven.source.plugin.version>2.4</maven.source.plugin.version>
     <maven.resource.plugin.version>2.7</maven.resource.plugin.version>
-    <maven.javadoc.plugin.version>2.10.1</maven.javadoc.plugin.version>
-    <maven.dependency.plugin.version>2.9</maven.dependency.plugin.version>
+    <maven.javadoc.plugin.version>2.10.3</maven.javadoc.plugin.version>
+    <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
     <maven.clean.plugin.version>2.6.1</maven.clean.plugin.version>
     <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
     <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
     <maven.site.plugin.version>3.4</maven.site.plugin.version>
-    <maven.surefire.plugin.version>2.18</maven.surefire.plugin.version>
-    <maven.surefire.report.plugin.version>2.18</maven.surefire.report.plugin.version>
-    <maven.enforcer.plugin.version>1.3.1</maven.enforcer.plugin.version>
+    <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
+    <maven.surefire.report.plugin.version>2.18.1</maven.surefire.report.plugin.version>
+    <maven.enforcer.plugin.version>1.4</maven.enforcer.plugin.version>
   </properties>
 
   <build>
