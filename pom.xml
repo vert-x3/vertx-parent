@@ -131,8 +131,11 @@
             <systemPropertyVariables>
               <io.netty.leakDetectionLevel>PARANOID</io.netty.leakDetectionLevel>
             </systemPropertyVariables>
-            <!-- Needs to be small enough to run in a EC2 1.7GB small instance -->
-            <argLine>-server -Xmx1200M</argLine>
+            <!--
+            Memory: Needs to be small enough to run in a EC2 1.7GB small instance
+            ArgLine: Allow using plugin injecting argLine (such as Jacoco)
+            -->
+            <argLine>${argLine} -server -Xmx1200M</argLine>
             <forkCount>1</forkCount>
             <reuseForks>true</reuseForks>
           </configuration>
