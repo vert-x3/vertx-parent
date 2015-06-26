@@ -232,6 +232,12 @@
       <id>sonatype-oss-release</id>
       <build>
         <plugins>
+          <!-- Set plugin version due to wrong plugin version when activating this profile -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <version>${maven.javadoc.plugin.version}</version>
+          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-enforcer-plugin</artifactId>
