@@ -29,7 +29,7 @@
 
   <groupId>io.vertx</groupId>
   <artifactId>vertx-parent</artifactId>
-  <version>10</version>
+  <version>10-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Vert.x Parent pom</name>
@@ -70,7 +70,7 @@
     <maven.resource.plugin.version>2.7</maven.resource.plugin.version>
     <maven.javadoc.plugin.version>2.10.1</maven.javadoc.plugin.version>
     <maven.jsdoc.plugin.version>1.2.0</maven.jsdoc.plugin.version>
-    <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
+    <maven.dependency.plugin.version>2.9</maven.dependency.plugin.version>
     <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
     <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
     <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
