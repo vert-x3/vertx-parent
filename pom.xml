@@ -82,6 +82,7 @@
     <maven.jacoco.plugin.version>0.7.6.201602180812</maven.jacoco.plugin.version>
     <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
     <maven.asciidoctor.plugin.version>1.5.3</maven.asciidoctor.plugin.version>
+    <maven.gmavenplus.plugin.version>1.5</maven.gmavenplus.plugin.version>
 
     <!--
     surefire argLine empty by default
@@ -238,6 +239,11 @@
           <groupId>com.ning.maven.plugins</groupId>
           <artifactId>maven-dependency-versions-check-plugin</artifactId>
           <version>${maven.dependency.versions.check.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.gmavenplus</groupId>
+          <artifactId>gmavenplus-plugin</artifactId>
+          <version>${maven.gmavenplus.plugin.version}</version>
         </plugin>
       </plugins>
     </pluginManagement>
