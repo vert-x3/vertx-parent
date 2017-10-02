@@ -292,6 +292,10 @@
                 </goals>
                 <configuration>
                   <rules>
+                    <requireJavaVersion>
+                      <message>Vert.x must be released with Java 1.8!</message>
+                      <version>[1.8,1.9)</version>
+                    </requireJavaVersion>
                     <requireReleaseDeps>
                       <message>No Vert.x Snapshots Allowed during a release!</message>
                       <includes>
