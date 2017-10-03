@@ -9,6 +9,7 @@
 build
 target
 out
+*.versionsBackup
 *.iml
 *.ipr
 *.iws
