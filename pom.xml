@@ -101,6 +101,9 @@
           <version>${maven.compiler.plugin.version}</version>
           <configuration>
             <optimize>true</optimize>
+            <compilerArgs>
+              <arg>-parameters</arg>
+            </compilerArgs>
           </configuration>
         </plugin>
         <plugin>
