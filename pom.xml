@@ -34,6 +34,10 @@
 
   <name>Vert.x Parent pom</name>
 
+  <organization>
+      <name>Eclipse</name>
+  </organization>
+
   <licenses>
     <license>
       <name>The Apache Software License, Version 2.0</name>
@@ -141,6 +145,10 @@
               <id>default-jar</id>
               <configuration>
                 <archive>
+                  <manifest>
+                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                    <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                  </manifest>
                   <!-- Generate a jar INDEX.LIST -->
                   <index>true</index>
                   <!-- Add the Maven coordinates in the manifest -->
