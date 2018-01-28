@@ -73,6 +73,7 @@
     <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
     <maven.resource.plugin.version>2.7</maven.resource.plugin.version>
     <maven.javadoc.plugin.version>2.10.1</maven.javadoc.plugin.version>
+    <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
     <maven.jsdoc.plugin.version>1.2.0</maven.jsdoc.plugin.version>
     <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
     <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
@@ -214,6 +215,11 @@
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-gpg-plugin</artifactId>
+          <version>${maven.gpg.plugin.version}</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-resources-plugin</artifactId>
           <version>${maven.resource.plugin.version}</version>
         </plugin>
@@ -288,6 +294,11 @@
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
             <version>${maven.javadoc.plugin.version}</version>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>${maven.gpg.plugin.version}</version>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
