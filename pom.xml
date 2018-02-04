@@ -203,7 +203,6 @@
           <version>${maven.javadoc.plugin.version}</version>
           <!-- Remove impl and keep only io/vertx files (no examples or docoverride) -->
           <configuration>
-            <additionalparam>-Xdoclint:none</additionalparam>
             <sourceFileExcludes>
               <sourceFileExclude>**/package-info.java</sourceFileExclude>
               <sourceFileExclude>**/impl/**</sourceFileExclude>
@@ -211,6 +210,7 @@
             <sourceFileIncludes>
               <sourceFileInclude>io/vertx/**/*.java</sourceFileInclude>
             </sourceFileIncludes>
+            <additionalparam>-Xdoclint:none &#45;&#45;allow-script-in-comments</additionalparam>
           </configuration>
         </plugin>
         <plugin>
