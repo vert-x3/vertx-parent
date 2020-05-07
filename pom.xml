@@ -204,7 +204,7 @@
             <sourceFileIncludes>
               <sourceFileInclude>io/vertx/**/*.java</sourceFileInclude>
             </sourceFileIncludes>
-            <additionalparam>-Xdoclint:none &#45;&#45;allow-script-in-comments</additionalparam>
+            <doclint>none</doclint>
           </configuration>
         </plugin>
         <plugin>
