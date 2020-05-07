@@ -87,7 +87,14 @@
     <maven.asciidoctor.plugin.version>1.5.6</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
 
+    <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
+
+    <!-- Set true for producing a Multi-Release jar -->
+    <jar.multi-release>false</jar.multi-release>
+
+    <!-- Specify a path to a valid manifest to merge it with default entries -->
+    <jar.manifest></jar.manifest>
   </properties>
 
   <build>
@@ -140,11 +147,15 @@
                   </manifest>
                   <!-- Generate a jar INDEX.LIST -->
                   <index>true</index>
-                  <!-- Add the Maven coordinates in the manifest -->
+                  <!-- Provide opportunity to merge entries from a custom file -->
+                  <manifestFile>${jar.manifest}</manifestFile>
                   <manifestEntries>
+                    <!-- Add the Maven coordinates in the manifest -->
                     <Maven-Group-Id>${project.groupId}</Maven-Group-Id>
                     <Maven-Artifact-Id>${project.artifactId}</Maven-Artifact-Id>
                     <Maven-Version>${project.version}</Maven-Version>
+                    <!-- Add configurable multi release jar -->
+                    <Multi-Release>${jar.multi-release}</Multi-Release>
                   </manifestEntries>
                 </archive>
                 <!-- Remove examples and docoverride -->
