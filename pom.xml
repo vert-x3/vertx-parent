@@ -90,9 +90,6 @@
     <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
 
-    <!-- Set true for producing a Multi-Release jar -->
-    <jar.multi-release>false</jar.multi-release>
-
     <!-- Specify a path to a valid manifest to merge it with default entries -->
     <jar.manifest></jar.manifest>
   </properties>
@@ -154,8 +151,6 @@
                     <Maven-Group-Id>${project.groupId}</Maven-Group-Id>
                     <Maven-Artifact-Id>${project.artifactId}</Maven-Artifact-Id>
                     <Maven-Version>${project.version}</Maven-Version>
-                    <!-- Add configurable multi release jar -->
-                    <Multi-Release>${jar.multi-release}</Multi-Release>
                   </manifestEntries>
                 </archive>
                 <!-- Remove examples and docoverride -->
