@@ -64,7 +64,6 @@
     <!-- Compiler plugin -->
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
-    <maven.compiler.release>8</maven.compiler.release>
 
     <!-- Plugin versions -->
 
@@ -329,6 +328,17 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>java-9</id>
+      <activation>
+        <jdk>[1.9,)</jdk>
+      </activation>
+      <properties>
+        <!-- Must compile with -release flag on JDK 9+ to avoid bytecode incompatibilities
+             such as: https://github.com/eclipse-vertx/vertx-sql-client/issues/736 -->
+        <maven.compiler.release>8</maven.compiler.release>
+      </properties>
     </profile>
   </profiles>
 
