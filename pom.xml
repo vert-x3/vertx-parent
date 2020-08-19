@@ -87,6 +87,7 @@
     <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
     <maven.asciidoctor.plugin.version>1.5.6</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
+    <maven.dependency-check-maven.plugin.version>5.3.2</maven.dependency-check-maven.plugin.version>
 
     <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
@@ -323,6 +324,29 @@
                     </requireReleaseDeps>
                   </rules>
                   <fail>true</fail>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>owasp-dependency-check</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>${maven.dependency-check-maven.plugin.version}</version>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>check</goal>
+                </goals>
+                <configuration>
+                  <!-- Only fail builds if severity level is High or above -->
+                  <failBuildOnCVSS>7</failBuildOnCVSS>
                 </configuration>
               </execution>
             </executions>
