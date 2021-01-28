@@ -84,7 +84,7 @@
     <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
     <maven.jacoco.plugin.version>0.7.6.201602180812</maven.jacoco.plugin.version>
     <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
-    <maven.asciidoctor.plugin.version>1.5.6</maven.asciidoctor.plugin.version>
+    <maven.asciidoctor.plugin.version>2.1.0</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
 
     <!-- Override to use a different asciidoc source directory -->
@@ -122,11 +122,13 @@
           <configuration>
             <sourceDirectory>${asciidoc.dir}</sourceDirectory>
             <outputDirectory>${project.build.directory}/docs/${project.artifactId}</outputDirectory>
-            <sourceHighlighter>coderay</sourceHighlighter>
             <preserveDirectories>true</preserveDirectories>
             <relativeBaseDir>true</relativeBaseDir>
             <backend>html</backend>
             <doctype>book</doctype>
+            <attributes>
+              <source-highlighter>coderay</source-highlighter>
+            </attributes>
           </configuration>
         </plugin>
         <plugin>
