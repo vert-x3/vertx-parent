@@ -6,3 +6,5 @@ The parent pom defines common default configuration for Vert.x projects:
 - file encoding.
 - Java 8 source and target.
 - install test-jar, sources and test-sources artifacts.
+- Netty leak detector.
+- Vert.x release/snapshots repositories.

@@ -57,6 +57,33 @@
     <url>git@github.com:vert-x3/vert-parent.git</url>
   </scm>
 
+  <distributionManagement>
+    <snapshotRepository>
+      <id>vertx-snapshots-repository</id>
+      <name>Vert.x Snapshots Repository</name>
+      <url>${vertx.snapshotRepository}</url>
+    </snapshotRepository>
+    <repository>
+      <id>vertx-release-repository</id>
+      <name>Vert.x Release Repository</name>
+      <url>${vertx.releaseRepository}</url>
+    </repository>
+  </distributionManagement>
+
+  <repositories>
+    <repository>
+      <id>vertx-snapshots-repository</id>
+      <name>Vert.x Snapshots Repository</name>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <releases>
+        <enabled>false</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -92,6 +119,15 @@
 
     <!-- Specify a path to a valid manifest to merge it with default entries -->
     <jar.manifest></jar.manifest>
+
+    <!-- Default Netty leak detector configuration -->
+    <io.netty.leakDetection.level>DISABLED</io.netty.leakDetection.level>
+    <io.netty.leakDetection.targetRecords>4</io.netty.leakDetection.targetRecords>
+    <io.netty.leakDetection.samplingInterval>128</io.netty.leakDetection.samplingInterval>
+
+    <!-- Dist management -->
+    <vertx.releaseRepository>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</vertx.releaseRepository>
+    <vertx.snapshotRepository>https://s01.oss.sonatype.org/content/repositories/snapshots/</vertx.snapshotRepository>
   </properties>
 
   <build>
@@ -169,7 +205,9 @@
           <configuration>
             <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
             <systemPropertyVariables>
-              <io.netty.leakDetectionLevel>PARANOID</io.netty.leakDetectionLevel>
+              <io.netty.leakDetection.level>${io.netty.leakDetectionLevel}</io.netty.leakDetection.level>
+              <io.netty.leakDetection.targetRecords>${io.netty.leakDetection.targetRecords}</io.netty.leakDetection.targetRecords>
+              <io.netty.leakDetection.samplingInterval>${io.netty.leakDetection.samplingInterval}</io.netty.leakDetection.samplingInterval>
             </systemPropertyVariables>
             <!--
             Memory: Needs to be small enough to run in a EC2 1.7GB small instance
