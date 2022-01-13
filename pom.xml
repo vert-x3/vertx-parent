@@ -109,7 +109,6 @@
     <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
     <maven.surefire.report.plugin.version>2.18.1</maven.surefire.report.plugin.version>
     <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
-    <maven.jacoco.plugin.version>0.7.6.201602180812</maven.jacoco.plugin.version>
     <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
     <maven.asciidoctor.plugin.version>2.1.0</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
@@ -212,9 +211,7 @@
               <io.netty.leakDetection.samplingInterval>${io.netty.leakDetection.samplingInterval}</io.netty.leakDetection.samplingInterval>
             </systemPropertyVariables>
             <!--
-            Memory: Needs to be small enough to run in a EC2 1.7GB small instance
-            ArgLine: Allow using plugin injecting argLine (such as Jacoco) - notice the @{} instead of ${} to enable
-            the late replacement.
+            Memory: Needs to be small enough to run in a EC2 1.7GB small instance the late replacement.
             -->
             <argLine>-server -Xmx1200M</argLine>
             <forkCount>1</forkCount>
