@@ -112,6 +112,7 @@
     <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
     <maven.asciidoctor.plugin.version>2.1.0</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
+    <maven.cyclonedx.plugin.version>2.7.9</maven.cyclonedx.plugin.version>
 
     <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
@@ -289,6 +290,11 @@
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>${maven.build.helper.maven.plugin.version}</version>
         </plugin>
+        <plugin>
+          <groupId>org.cyclonedx</groupId>
+          <artifactId>cyclonedx-maven-plugin</artifactId>
+          <version>${maven.cyclonedx.plugin.version}</version>
+        </plugin>
       </plugins>
     </pluginManagement>
     <plugins>
@@ -313,6 +319,18 @@
             <id>attach-test-jar</id>
             <goals>
               <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.cyclonedx</groupId>
+        <artifactId>cyclonedx-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>makeBom</goal>
             </goals>
           </execution>
         </executions>
