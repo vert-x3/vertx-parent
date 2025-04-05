@@ -52,9 +52,9 @@
   </licenses>
 
   <scm>
-    <connection>scm:git:git@github.com:vert-x3/vert-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:vert-x3/vert-parent.git</developerConnection>
-    <url>git@github.com:vert-x3/vert-parent.git</url>
+    <connection>scm:git:git@github.com:vert-x3/vertx-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:vert-x3/vertx-parent.git</developerConnection>
+    <url>git@github.com:vert-x3/vertx-parent.git</url>
   </scm>
 
   <distributionManagement>
