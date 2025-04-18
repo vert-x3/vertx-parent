@@ -21,22 +21,34 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
-
   <groupId>io.vertx</groupId>
   <artifactId>vertx-parent</artifactId>
   <version>19-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <name>Vert.x Parent pom</name>
+  <url>https://github.com/vert-x3/vertx-parent</url>
+  <description>Vert.x Parent pom</description>
+
+  <scm>
+    <connection>scm:git:git@github.com:vert-x3/vertx-parent.git</connection>
+    <developerConnection>scm:git:git@github.com:vert-x3/vertx-parent.git</developerConnection>
+    <url>git@github.com:vert-x3/vertx-parent.git</url>
+  </scm>
 
   <organization>
     <name>Eclipse</name>
   </organization>
+
+  <developers>
+    <developer>
+      <id>vertx.io</id>
+      <name>Eclipse Vert.x Project Contributors</name>
+      <url>https://vertx.io/</url>
+      <organization>Eclipse Vert.x</organization>
+      <organizationUrl>https://vertx.io/</organizationUrl>
+    </developer>
+  </developers>
 
   <licenses>
     <license>
@@ -50,12 +62,6 @@
       <distribution>repo</distribution>
     </license>
   </licenses>
-
-  <scm>
-    <connection>scm:git:git@github.com:vert-x3/vertx-parent.git</connection>
-    <developerConnection>scm:git:git@github.com:vert-x3/vertx-parent.git</developerConnection>
-    <url>git@github.com:vert-x3/vertx-parent.git</url>
-  </scm>
 
   <distributionManagement>
     <snapshotRepository>
@@ -74,7 +80,7 @@
     <repository>
       <id>vertx-snapshots-repository</id>
       <name>Vert.x Snapshots Repository</name>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+      <url>${vertx.snapshotRepository}</url>
       <releases>
         <enabled>false</enabled>
       </releases>
@@ -93,29 +99,31 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <!-- Plugin versions -->
-
-    <maven.compiler.plugin.version>3.7.0</maven.compiler.plugin.version>
-    <maven.jar.plugin.version>3.0.2</maven.jar.plugin.version>
-    <maven.source.plugin.version>3.0.1</maven.source.plugin.version>
-    <maven.resource.plugin.version>2.7</maven.resource.plugin.version>
-    <maven.javadoc.plugin.version>3.2.0</maven.javadoc.plugin.version>
-    <maven.gpg.plugin.version>1.6</maven.gpg.plugin.version>
-    <maven.dependency.plugin.version>2.10</maven.dependency.plugin.version>
-    <maven.clean.plugin.version>3.0.0</maven.clean.plugin.version>
-    <maven.deploy.plugin.version>2.8.2</maven.deploy.plugin.version>
-    <maven.install.plugin.version>2.5.2</maven.install.plugin.version>
-    <maven.assembly.plugin.version>3.1.0</maven.assembly.plugin.version>
-    <maven.site.plugin.version>3.4</maven.site.plugin.version>
-    <maven.surefire.plugin.version>2.18.1</maven.surefire.plugin.version>
-    <maven.surefire.report.plugin.version>2.18.1</maven.surefire.report.plugin.version>
-    <maven.enforcer.plugin.version>1.4.1</maven.enforcer.plugin.version>
-    <maven.dependency.versions.check.plugin.version>2.0.2</maven.dependency.versions.check.plugin.version>
-    <maven.asciidoctor.plugin.version>2.1.0</maven.asciidoctor.plugin.version>
-    <maven.build.helper.maven.plugin.version>3.0.0</maven.build.helper.maven.plugin.version>
-    <maven.cyclonedx.plugin.version>2.7.9</maven.cyclonedx.plugin.version>
+    <maven.compiler.plugin.version>3.14.0</maven.compiler.plugin.version>
+    <maven.jar.plugin.version>3.4.2</maven.jar.plugin.version>
+    <maven.source.plugin.version>3.3.1</maven.source.plugin.version>
+    <maven.resource.plugin.version>3.3.1</maven.resource.plugin.version>
+    <maven.javadoc.plugin.version>3.11.2</maven.javadoc.plugin.version>
+    <maven.gpg.plugin.version>3.2.7</maven.gpg.plugin.version>
+    <maven.dependency.plugin.version>3.8.1</maven.dependency.plugin.version>
+    <maven.clean.plugin.version>3.4.1</maven.clean.plugin.version>
+    <maven.deploy.plugin.version>3.1.4</maven.deploy.plugin.version>
+    <maven.install.plugin.version>3.1.4</maven.install.plugin.version>
+    <maven.assembly.plugin.version>3.7.1</maven.assembly.plugin.version>
+    <maven.site.plugin.version>3.21.0</maven.site.plugin.version>
+    <maven.surefire.plugin.version>3.5.3</maven.surefire.plugin.version>
+    <maven.surefire.report.plugin.version>3.5.3</maven.surefire.report.plugin.version>
+    <maven.failsafe.plugin.version>3.5.3</maven.failsafe.plugin.version>
+    <maven.enforcer.plugin.version>3.5.0</maven.enforcer.plugin.version>
+    <maven.asciidoctor.plugin.version>3.2.0</maven.asciidoctor.plugin.version>
+    <maven.build.helper.maven.plugin.version>3.6.0</maven.build.helper.maven.plugin.version>
+    <maven.cyclonedx.plugin.version>2.9.1</maven.cyclonedx.plugin.version>
 
     <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
+
+    <!-- Execution skip -->
+    <skipEnforcer>false</skipEnforcer>
 
     <!-- Specify a path to a valid manifest to merge it with default entries -->
     <jar.manifest></jar.manifest>
@@ -207,7 +215,7 @@
           <configuration>
             <failIfNoSpecifiedTests>false</failIfNoSpecifiedTests>
             <systemPropertyVariables>
-              <io.netty.leakDetection.level>${io.netty.leakDetectionLevel}</io.netty.leakDetection.level>
+              <io.netty.leakDetection.level>${io.netty.leakDetection.level}</io.netty.leakDetection.level>
               <io.netty.leakDetection.targetRecords>${io.netty.leakDetection.targetRecords}</io.netty.leakDetection.targetRecords>
               <io.netty.leakDetection.samplingInterval>${io.netty.leakDetection.samplingInterval}</io.netty.leakDetection.samplingInterval>
             </systemPropertyVariables>
@@ -281,11 +289,6 @@
           <version>${maven.enforcer.plugin.version}</version>
         </plugin>
         <plugin>
-          <groupId>com.ning.maven.plugins</groupId>
-          <artifactId>maven-dependency-versions-check-plugin</artifactId>
-          <version>${maven.dependency.versions.check.plugin.version}</version>
-        </plugin>
-        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>${maven.build.helper.maven.plugin.version}</version>
@@ -323,36 +326,38 @@
           </execution>
         </executions>
       </plugin>
-      <plugin>
-        <groupId>org.cyclonedx</groupId>
-        <artifactId>cyclonedx-maven-plugin</artifactId>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>makeBom</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
   <profiles>
     <profile>
-      <id>sonatype-oss-release</id>
+      <id>release</id>
       <build>
         <plugins>
-          <!-- Set plugin version due to wrong plugin version when activating this profile -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <version>${maven.javadoc.plugin.version}</version>
-          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
-            <version>${maven.gpg.plugin.version}</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-javadoc-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-javadoc-jar</id>
+                <goals>
+                  <goal>jar</goal>
+                </goals>
+              </execution>
+            </executions>
           </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
@@ -364,6 +369,7 @@
                   <goal>enforce</goal>
                 </goals>
                 <configuration>
+                  <skip>${skipEnforcer}</skip>
                   <rules>
                     <requireJavaVersion>
                       <message>Vert.x must be released with Java 1.8!</message>
@@ -378,6 +384,18 @@
                   </rules>
                   <fail>true</fail>
                 </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>org.cyclonedx</groupId>
+            <artifactId>cyclonedx-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>makeBom</goal>
+                </goals>
               </execution>
             </executions>
           </plugin>
