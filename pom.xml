@@ -115,7 +115,8 @@
     <maven.surefire.report.plugin.version>3.5.3</maven.surefire.report.plugin.version>
     <maven.failsafe.plugin.version>3.5.3</maven.failsafe.plugin.version>
     <maven.enforcer.plugin.version>3.5.0</maven.enforcer.plugin.version>
-    <maven.asciidoctor.plugin.version>3.2.0</maven.asciidoctor.plugin.version>
+    <!-- Last version JDK 1.8 compatible -->
+    <maven.asciidoctor.plugin.version>2.2.6</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.6.0</maven.build.helper.maven.plugin.version>
     <maven.cyclonedx.plugin.version>2.9.1</maven.cyclonedx.plugin.version>
 
