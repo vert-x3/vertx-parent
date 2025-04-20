@@ -23,7 +23,7 @@
 
   <groupId>io.vertx</groupId>
   <artifactId>vertx-parent</artifactId>
-  <version>21-SNAPSHOT</version>
+  <version>21</version>
   <packaging>pom</packaging>
 
   <name>Vert.x Parent pom</name>
