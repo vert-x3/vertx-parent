@@ -114,7 +114,7 @@
     <maven.asciidoctor.plugin.version>2.2.6</maven.asciidoctor.plugin.version>
     <maven.build.helper.maven.plugin.version>3.6.0</maven.build.helper.maven.plugin.version>
     <maven.cyclonedx.plugin.version>2.9.1</maven.cyclonedx.plugin.version>
-    <maven.central.publishing.maven.plugin.version>0.7.0</maven.central.publishing.maven.plugin.version>
+    <maven.central.publishing.maven.plugin.version>0.11.0</maven.central.publishing.maven.plugin.version>
 
     <!-- Override to use a different asciidoc source directory -->
     <asciidoc.dir>${project.basedir}/src/main/asciidoc</asciidoc.dir>
